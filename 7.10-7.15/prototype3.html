@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prototype字面量创建原型方法</title>
+</head>
+<body>
+<script type="text/javascript">
+    function SuperType(){
+        this.property = true;
+    }
+
+    SuperType.prototype.getSuperValue = function(){
+        return this.property;
+    };
+    function SubType(){
+        this.subproperty = false;
+    }
+    //继承了SuperType
+    SubType.prototype = new SuperType();
+
+    //使用字面量添加新方法,会导致上一行代码无效
+
+    SubType.prototype = {
+        getSubValue : function(){
+            return this.subproperty;
+        },
+        someOtherMethod : function(){
+            return false;
+        }
+
+    };
+
+    var instance  = new SubType();
+    alert(instance.getSuperValue());//error;
+</script>
+</body>
+</html>

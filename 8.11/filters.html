@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message | capitalize('uu',mm)}}
+    <!--这里,message是第一个参数,字符串'uu'将传给过滤器作为第二个参数,mm表达式的值将被求值然后传给过滤器作为的三个参数-->
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            message:'runoob',
+            uu:'hhhh',
+            mm:'ddd'
+        },
+        filters:{
+            capitalize: function (value,oo,ee){//这个是操作文本元素的方法,而methods是事件绑定方法
+                if(!oo) {
+                    return ''
+                }
+                oo = oo.toString();
+                return oo.charAt(0).toUpperCase()+oo.slice(1)
+            }
+        }
+    })
+</script>
+</body>
+</html>

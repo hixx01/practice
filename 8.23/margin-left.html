@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左边固定/右边自适应/负边距</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        .left{
+            width:100px;
+            height:200px;
+            background:pink;
+            float:left;
+        }
+        .right{
+            height:200px;
+            width:100%;
+
+            float:left;
+            margin-left:-100px;
+        }
+        .inner{
+            margin-left:100px;
+            background:blue;
+        }
+    </style>
+</head>
+<body>
+<div class="left">
+    <!--<div class="inner">left</div>-->
+</div>
+<div class="right">
+    <div class="inner">right</div>
+</div>
+</body>
+</html>

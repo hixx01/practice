@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>do</title>
+</head>
+<body>
+<script>
+    {
+        let t = f();
+        t = t * t + 1;
+    }
+    //上面代码中,块级作用域将两个语句封装在一起,但是,在块级作用域以外,没有办法得到t的值,
+    // 因为块级作用域不返回值,除非t是全局变量
+
+
+   let x = do{
+        let t = f();
+        t * t + 1;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setter</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{site}}</p>
+</div>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            name:'Google',
+            url:'http://www.google.com'
+        },
+        computed:{
+            site:{
+                get:function (){
+                    return this.name + ' ' + this.url
+                },
+                set:function (newValue){
+                    var names = newValue.split(' ');
+                    this.name = names[0];
+                    this.url = names[names.length - 1]
+                }
+
+            }
+        }
+    })
+
+    vm.site = '谢星';
+    document.write('name:'+vm.name);
+    document.write('<br>');
+    document.write('url:'+vm.url);
+    //在实例运行结果看在运行vm.site = '谢星'时,setter会被调用,vm.name和vm.url也会被对应更新
+
+
+</script>
+</body>
+</html>

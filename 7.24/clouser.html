@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var num = 10;
+    var obj = {
+        num:4,
+        fn:(function (){
+                this.num -= 2;  //匿名函数的this指向window
+                num += 5;   //undefined+=5//NaN
+                var num = 6; //又恢复到了6
+                return function (){
+                    this.num +=  3;
+                    num += 2;
+                    console.log(num);   //8
+
+                }
+            })(this.num)
+        }
+    //第一次执行完
+    //全局作用域的num变成了10-2+3=11
+    //匿名函数的作用域的num变成6+2=8
+
+    //第二次执行
+    //全局作用域的num没发生变化  11
+    //obj的num属性变成了4+3=7
+    //匿名函数的作用域的num变成了8+2=10
+    var fn = obj.fn;
+    fn();
+    //obj.fn();
+    console.log(window.num);  //11
+</script>
+</body>
+</html>

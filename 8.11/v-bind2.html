@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind2</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="container">
+    <img v-bind:src="imgUrl">
+    <!--标签属性数据绑定,必须使用v-bind指令,v-bind声明的属性会随着绑定数据的改变而更新-->
+    <button v-on:click="btnClick">切换图片</button>
+</div>
+
+<script>
+    new Vue({
+        el:'#container',//css选择器语法
+        data:{
+            imgUrl:'card1.jpg'
+        },
+        methods:{
+            btnClick :function (){
+                //this指向vue实例本身,该处即指向vm对象
+                this.imgUrl='card2.jpg'
+            }
+        }
+    })
+</script>
+</body>
+</html>

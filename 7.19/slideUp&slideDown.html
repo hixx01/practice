@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slideUp和slideDown</title>
+    <style>
+        #panel {
+            width:300px;
+            height:200px;
+        }
+        .head{
+            background:peru;
+            font-size:20px;
+            font-weight:bolder;
+            margin-bottom: 0;
+            cursor: pointer ;
+        }
+        .content {
+            /*visibility:hidden ;不能用visibility*/
+            display:none;
+            width:300px;
+            height:150px;
+            background:#eee;
+        }
+    </style>
+</head>
+<body>
+<div id="panel">
+    <h5 class="head">什么是jQuery?</h5>
+    <div class="content">
+        jQuery是继prototype之后又一个优秀的javascript库,它是一个由johnresig创建于2006年1月的开源项目.
+    </div>
+</div>
+<script src="jquery-1.12.3.min.js"></script>
+<script>
+
+    $(function (){
+        $("#panel h5.head").toggle(function() {
+            $(this).next().slideUp();
+        },function(){
+            $(this).next().slideDown();
+        })
+    })
+
+</script>
+</body>
+</html>

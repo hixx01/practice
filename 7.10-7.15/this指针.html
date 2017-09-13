@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this指针</title>
+</head>
+<body>
+<script type="text/javascript">
+    var obj = {
+        length : 10,
+        method : function(){
+            function temp(){
+                console.log(this);
+                console.log(this.length);
+            }
+            temp();
+            console.log(this.length);
+        }
+    }
+    obj.method();
+</script>
+</body>
+</html>

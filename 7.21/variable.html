@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本类型和引用类型</title>
+</head>
+<body>
+<script type="text/javascript">
+    //1.引用类型
+    //var person = new Object();
+    //person.name = "Nicholas";
+    //alert(person.name);//"Nicholas"
+
+    //2.基本类型
+
+//    var name = "Nicholas";
+//    name.age = 27;
+//    alert("name.age");//undefined
+
+
+    //3.复制变量
+//    var obj1 = new Object();
+//    var obj2 = obj1;
+//    obj1.name = "Nicholas";
+//    alert(obj2.name);
+//
+
+    //4.参数传递
+
+    function setName(obj){
+        obj.name = "Nicholas";
+        obj = new Object();
+        obj.name = "Greg";
+    }
+
+    var person = new Object();
+    setName(person);
+    alert(person.name);//"Nicholas"
+</script>
+</body>
+</html>

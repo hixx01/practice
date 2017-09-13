@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阻止事件冒泡</title>
+    <style>
+        #content{
+            width:300px;
+            height:30px;
+            background:pink;
+        }
+        span{
+            width:200px;
+            height:30px;
+            background:#eee;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    外层div元素
+    <span>内层span元素</span>
+    外层div元素
+</div>
+<div id="msg"></div>
+<script src="jquery-1.12.3.min.js "></script>
+<script type="text/javascript">
+    $(function(){
+        //为span元素绑定click事件
+        $('span').bind("click",function(event){
+            var txt = $('#msg').html()+"<p>内层span元素被单击</p>";
+            $('#msg').html(txt);
+            event.stopPropagation();
+        });
+        //为div元素绑定click事件
+        $('#content').bind("click",function(){
+            var txt = $('#msg').html()+"<p>外层div元素被单击</p>";
+            $('#msg').html(txt);
+            event.stopPropagation();
+        });
+        //为body元素绑定click事件
+        $("body").bind("click",function(){
+            var txt = $('#msg').html()+"<p>body元素被单击</p>";
+            $('#msg').html(txt);
+            event.stopPropagation();
+        });
+    })
+</script>
+</body>
+</html>

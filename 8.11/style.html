@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>style</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-bind:style = "{color: activeColor,fontsize:fontsize + 'px'}">面具</div>
+    <!--可以在v-bind:style直接设置样式,也可以直接将style绑到一个样式对象上,例如:v-bind:style="styleObject"-->
+</div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            activeColor: 'green',
+            fontsize: 30
+        }
+    })
+</script>
+</body>
+</html>

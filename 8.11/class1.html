@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue class</title>
+    <script src="vue.js"></script>
+    <style>
+        .text-danger{
+            background:red;
+            width:100px;
+            height:100px;
+        }
+        .active{
+            width:100px;
+            height:100px;
+            background:green;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div v-bind:class="[errorClass,isActive ? activeClass : '']"></div>
+    <!--errorClass是始终存在的,isActive为true时添加activeClass类-->
+</div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            isActive:true,
+            activeClass:'active',
+            errorClass:'text-danger'
+        }
+    })
+</script>
+</body>
+</html>

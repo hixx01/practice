@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arguments</title>
+</head>
+<body>
+<script type="text/javascript">
+    function fn(a,b,c){
+        console.log(arguments.callee);
+        arguments[0]="1234";
+        console.log(a);
+    }
+    fn(1);//1234
+    fn(2,null,3);//1234
+    fn({a:123},'b');//1234
+    fn('a','b','c');//1234
+</script>
+</body>
+</html>

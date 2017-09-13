@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>try-catch</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    function buildUrl(){
+        var qs = "?debug=true";
+
+        with(location){
+            var url = href + qs;
+        }
+        return url;
+    }
+
+    buildUrl();
+
+</script>
+</body>
+</html>

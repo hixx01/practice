@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>综合动画</title>    <style>
+    #panel{
+        width:100px;
+        height:100px;
+        background:pink;
+        border:1px solid #eee;
+        position:relative;
+        cursor:pointer;
+    }
+</style>
+</head>
+<body>
+<div id="panel"></div>
+<script src="jquery-1.12.3.min.js "></script>
+<script type="text/javascript">
+
+
+
+    //$(function(){
+      //  $(this).css("opacity","0.5");//设置不透明度
+        //$("#panel").click(function(){
+
+//            $(this).animate({left:"500px",height:"200px",opacity:"1"},3000)
+  //                  .animate({top:"200px",width:"200px"},3000)
+               //     .fadeOut("slow");
+    //    });
+    //});
+    //在上例中,如果想要在最后一步切换元素的css样式,而不是隐藏元素:css("border","5px solid blue");
+    //如果只是按照这种常规的方法,将fadeOut("slow")改为css("border","5px solid blue")
+    //这样并不能得到预期效果,预期的效果是在动画的最后一步改变元素的样式,二十几的效果是 刚执行完动画的时候
+    //css()方法就被执行了
+    //出现这后果的原因是css()方法并不会加入到动画的队列当中,而是立即执行,可以使用回调函数的(callback)对非动画
+    //方法实现排队,只要把css()方法写在最后一个动画的回调函数里面即可.
+    $(function(){
+
+        $("#panel").click(function(){
+
+            $(this).animate({left:"500px",height:"200px",opacity:"1"},3000)
+                    .animate({top:"200px",width:"200px"},3000,function(){
+                        $(this).css("border","5px solid blue");
+                    })
+        });
+    });
+
+
+
+</script>
+</body>
+</html>

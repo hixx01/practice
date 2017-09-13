@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call和apply</title>
+</head>
+<body>
+<script type="text/javascript">
+    function sum(a,b){
+        return a+b;
+    }
+
+    //var result = sum.call(null,10,20);
+    //var result = sum.apply(null,[10,20]);
+    var obj = {
+        username:'abcde'
+    };
+    var result = sum.call(obj,10,20);
+    console.log(result);
+</script>
+</body>
+</html>

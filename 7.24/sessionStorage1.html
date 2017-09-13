@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>session存储</title>
+</head>
+<body>
+<script type="text/javascript">
+    if(sessionStorage.pagecount){
+         sessionStorage.pagecount = Number(sessionStorage.pagecount)+1;
+
+    }else{
+         sessionStorage.pagecount=1;
+    }
+    document.write("visits "+sessionStorage.pagecount+"time(s)")
+</script>
+</body>
+</html>

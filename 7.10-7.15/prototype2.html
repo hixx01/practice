@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prototype规则</title>
+</head>
+<body>
+<script type="text/javascript">
+    function SuperType(){
+        this.prototype = true;
+    }
+
+    SuperType.prototype.getSuperValue = function(){
+        return this.property;
+    };
+
+    function SubType(){
+        this.subproperty = false;
+    }
+
+    //继承了SuperType
+    SubType.prototype = new SuperType();
+
+    //添加新方法
+    SubType.prototype.getSubValue = function(){
+        return this.subproperty;
+    };
+
+    //重写超类型中的方法
+
+    SubType.prototype.getSuperValue = function(){
+        return false;
+    };
+
+    var instance = new SubType();
+    alert(instance.getSuperValue());
+
+    //子类型有时候需要覆盖超类型中的某个方法,或者需要添加超类型中不存
+    //2在的某个方法.但不管怎样,给原型添加的方法
+    //的代码一定要放在替换原型的语句之后.
+</script>
+</body>
+</html>

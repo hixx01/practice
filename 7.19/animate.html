@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义动画</title>
+    <style>
+        #panel{
+            width:100px;
+            height:100px;
+            background:pink;
+            border:1px solid #eee;
+            position:relative;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="panel"></div>
+<script src="jquery-1.12.3.min.js "></script>
+<script type="text/javascript">
+
+    //1.单纯的向右移动画
+//    $(function(){
+//        $("#panel").click(function(){
+//            $(this).animate({left:"+=500px"},3000);//每单击一次,向右移动500px
+//        });
+//    });
+
+
+
+    //2.在向右移的时候div的高度还在增加
+//    $(function(){
+//        $("#panel").click(function(){
+//            $(this).animate({left:"500px",height:"200px"},3000);
+//        });
+//    });
+//
+
+
+
+    //3.也可以拆分开来写,就是执行完右移的动画之后,再让它的高度在原地增加
+    $(function(){
+        $("#panel").click(function(){
+//            $(this).animate({left:"500px"},3000);
+//            $(this).animate({height:"200px"},3000);
+//
+            $(this).animate({left:"500px"},3000).animate({height:"200px"});//链式的写法
+        });
+    });
+
+</script>
+</body>
+</html>

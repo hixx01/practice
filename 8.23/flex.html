@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两栏布局</title>
+    <style>
+        #content{
+            display:flex;
+            width:500px;
+        }
+        .left{
+            height:200px;
+            background:pink;
+            flex:0 1 100px;   //flex-grow:0 表示不能被放大  flex-shrink:1 表示能被缩小  width:宽度
+        }
+        .right{
+            height:200px;
+            background:blue;
+            flex:auto;  // 0 1 auto
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+</body>
+</html>

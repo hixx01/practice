@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html" http-equiv="content-type">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <script>
+        !function(e,t,i,r){function n(){var e=document.querySelector("head"),t=document.createElement("div");t.style.width="1rem",t.style.display="none",e.appendChild(t);var i=parseFloat(window.getComputedStyle(t,null).width);return e.removeChild(t),i}function a(){var r=d.getBoundingClientRect().width;r/c>768&&(r=768*c);var n=r/e*t;if(!i){var a=p/16;n/=a}d.style.fontSize=n+"px",v.rem=n}var m,o=window,l=o.document,d=l.documentElement,s=l.querySelector('meta[name="viewport"]'),c=0,u=0,p=n(),v={};if(s){var h=s.getAttribute("content").match(/initial\-scale=([\d\.]+)/);h&&(console.warn("将根据已有的meta标签来设置缩放比例"),u=parseFloat(h[1]),c=parseInt(1/u))}if(!c&&!u){var f=o.devicePixelRatio;r?(c=f>=3&&(!c||c>=3)?3:f>=2&&(!c||c>=2)?2:1,u=1/c):(c=1,u=1/c)}if(d.setAttribute("data-dpr",c),!s)if(s=l.createElement("meta"),s.setAttribute("name","viewport"),s.setAttribute("content","width=device-width, initial-scale="+u+", maximum-scale="+u+", minimum-scale="+u+", user-scalable=no"),d.firstElementChild)d.firstElementChild.appendChild(s);else{var w=l.createElement("div");w.appendChild(s),l.write(w.innerHTML)}o.addEventListener("resize",function(){clearTimeout(m),m=setTimeout(a,300)},!1),o.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(m),m=setTimeout(a,300))},!1),a(),v.dpr=c,v.refreshRem=a,v.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t},v.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t},window.remmoka=v}
+        (750,100,!0,!0);
+        /*
+         * designWidth, oneRem2Px, resetScaleFontSizeToDefault, useScaleFix1pxTooBold
+         * @param designWidth 设计稿宽度 一般来说iPhone6是750 如果缩小就变成了375px
+         * @param oneRem2Px 1rem对应多少px
+         * @param resetScaleFontSizeToDefau lt 是否重置Android因为系统放大或者缩小字体带来的影响
+         * @param useScaleFix1pxTooBold 是否通过meta标签的scale处理1px过于粗的问题
+         * */
+    </script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>首页</title>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="location">
+                <span class="location-name">上海</span>
+                <img src="./img/turn_btm.png" alt="下拉图标">
+            </div>
+            <div class="search">
+                <img class="serach-icon" src="./img/search.png" alt="搜索">
+                <input type="text" placeholder="搜索商品、店铺"/>
+                <img class="vioce-icon" src="./img/voice.png" alt="语音">
+            </div>
+            <div class="shopping">
+                <span class="title">淘货</span>
+            </div>
+        </div>。
+        <div class="banner">
+            <ul class="banner-list">
+                <li><img src="./img/list_03.jpg" alt="图片"></li>
+                <li><img src="./img/list_02.jpg" alt="图片"></li>
+                <li><img src="./img/list_01.jpg" alt="图片"></li>
+            </ul>
+            <ul class="list-btn">
+                <li class="focus"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="cnt-line"></div>
+        <div class="nav">
+            <ul class="nav-list">
+                <li>
+                    <a href="#">
+                        <div class="icon yuan-chuang">
+                            <img src="./img/yuan_chuang.png" alt="原创">
+                        </div>
+                        <span class="title">原创</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="icon ding-huo">
+                            <img src="./img/ding_huo.png" alt="订货">
+                        </div>
+                        <span class="title">订货</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="icon qian-dao">
+                            <img src="./img/qian_dao.png" alt="签到">
+                        </div>
+                        <span class="title">签到</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="icon xiao-xi">
+                            <img src="./img/xiao_xi.png" alt="消息">
+                        </div>
+                        <span class="title">消息</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav-list">
+                <li>
+                    <a href="#">
+                        <div class="icon xu-xiu">
+                            <img src="./img/xu_qiu.png" alt="需求">
+                        </div>
+                        <span class="title">需求</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="icon guan-zhu">
+                            <img src="./img/guan_zhu.png" alt="关注">
+                        </div>
+                        <span class="title">关注</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="icon shou-cang">
+                            <img src="./img/shou_cang.png" alt="收藏">
+                        </div>
+                        <span class="title">收藏</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="icon quan-bu">
+                            <img src="./img/quan_bu.png" alt="全部">
+                        </div>
+                        <span class="title">全部</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="cnt-line"></div>
+        <div class="now-list">
+            <div class="top">
+                <div class="title-left">现货<span>&nbsp;-&nbsp;抢购</span></div>
+                <div class="title-right">更多</div>
+            </div>
+            <ul class="list-cnt">
+                <li>
+                    <img src="./img/now_list_01.jpg">
+                    <span>麦哲伦瓷砖</span>
+                </li>
+                <li>
+                    <img src="./img/now_list_02.jpg">
+                    <span>鹰牌陶瓷瓷砖</span>
+                </li>
+                <li>
+                    <img src="./img/now_list_03.jpg">
+                    <span>金意陶瓷砖</span>
+                </li>
+            </ul>
+        </div>
+        <div class="cnt-line"></div>
+        <div class="hot-list">
+            <div class="top">
+                <div class="title-left">热门<span>&nbsp;-&nbsp;货源</span></div>
+                <div class="title-right">更多</div>
+            </div>
+            <div class="list-cnt">
+                <ul class="lists">
+                    <li class="item">
+                        <img src="./img/hot_list_01.jpg">
+                        <div class="center">
+                            <div class="title">博典瓷砖防滑瓷砖</div>
+                            <div class="price">
+                                <div class="now-price">￥<span>7.0</span></div>
+                                <div class="markt-price">市场价:<span>10.0</span></div>
+                            </div>
+                        </div>
+                        <div class="btm">
+                            <div class="left">库存&nbsp;:&nbsp;<span>152</span></div>
+                            <div class="right">已售&nbsp;:&nbsp;<span>20</span></div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="./img/hot_list_02.jpg">
+                        <div class="center">
+                            <div class="title">博典瓷砖防滑瓷砖</div>
+                            <div class="price">
+                                <div class="now-price">￥<span>7.0</span></div>
+                                <div class="markt-price">市场价:<span>10.0</span></div>
+                            </div>
+                        </div>
+                        <div class="btm">
+                            <div class="left">库存&nbsp;:&nbsp;<span>152</span></div>
+                            <div class="right">已售&nbsp;:&nbsp;<span>20</span></div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="./img/hot_list_03.jpg">
+                        <div class="center">
+                            <div class="title">博典瓷砖防滑瓷砖</div>
+                            <div class="price">
+                                <div class="now-price">￥<span>7.0</span></div>
+                                <div class="markt-price">市场价:<span>10.0</span></div>
+                            </div>
+                        </div>
+                        <div class="btm">
+                            <div class="left">库存&nbsp;:&nbsp;<span>152</span></div>
+                            <div class="right">已售&nbsp;:&nbsp;<span>20</span></div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="./img/hot_list_04.jpg">
+                        <div class="center">
+                            <div class="title">博典瓷砖防滑瓷砖</div>
+                            <div class="price">
+                                <div class="now-price">￥<span>7.0</span></div>
+                                <div class="markt-price">市场价:<span>10.0</span></div>
+                            </div>
+                        </div>
+                        <div class="btm">
+                            <div class="left">库存&nbsp;:&nbsp;<span>152</span></div>
+                            <div class="right">已售&nbsp;:&nbsp;<span>20</span></div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="lists">
+                    <li class="item">
+                        <img src="./img/hot_list_02.jpg">
+                        <div class="center">
+                            <div class="title">博典瓷砖防滑瓷砖</div>
+                            <div class="price">
+                                <div class="now-price">￥<span>7.0</span></div>
+                                <div class="markt-price">市场价:<span>10.0</span></div>
+                            </div>
+                        </div>
+                        <div class="btm">
+                            <div class="left">库存&nbsp;:&nbsp;<span>152</span></div>
+                            <div class="right">已售&nbsp;:&nbsp;<span>20</span></div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="./img/hot_list_03.jpg">
+                        <div class="center">
+                            <div class="title">博典瓷砖防滑瓷砖</div>
+                            <div class="price">
+                                <div class="now-price">￥<span>7.0</span></div>
+                                <div class="markt-price">市场价:<span>10.0</span></div>
+                            </div>
+                        </div>
+                        <div class="btm">
+                            <div class="left">库存&nbsp;:&nbsp;<span>152</span></div>
+                            <div class="right">已售&nbsp;:&nbsp;<span>20</span></div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="./img/hot_list_02.jpg">
+                        <div class="center">
+                            <div class="title">博典瓷砖防滑瓷砖</div>
+                            <div class="price">
+                                <div class="now-price">￥<span>7.0</span></div>
+                                <div class="markt-price">市场价:<span>10.0</span></div>
+                            </div>
+                        </div>
+                        <div class="btm">
+                            <div class="left">库存&nbsp;:&nbsp;<span>152</span></div>
+                            <div class="right">已售&nbsp;:&nbsp;<span>20</span></div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="./img/hot_list_02.jpg">
+                        <div class="center">
+                            <div class="title">博典瓷砖防滑瓷砖</div>
+                            <div class="price">
+                                <div class="now-price">￥<span>7.0</span></div>
+                                <div class="markt-price">市场价:<span>10.0</span></div>
+                            </div>
+                        </div>
+                        <div class="btm">
+                            <div class="left">库存&nbsp;:&nbsp;<span>152</span></div>
+                            <div class="right">已售&nbsp;:&nbsp;<span>20</span></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计刷新次数</title>
+</head>
+<body>
+<p>刷新页面卡看到计数器在增长.</p>
+<p>清关闭浏览器窗口,然后再试一次,计数器会继续计数</p>
+<script type="text/javascript">
+    if(localStorage.pagecount){
+        localStorage.pagecount = Number(localStorage.pagecount)+1;
+
+    }
+    else{
+        localStorage.pagecount=1;
+    }
+    document.write("Visits:"+localStorage.pagecount+"timer(s).")
+</script>
+</body>
+</html>

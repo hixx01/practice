@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for1</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="value in object">
+            {{value}}
+            <!--v-for可以通过一个对象的属性来迭代数据-->
+        </li>
+        <li v-for="(value,key) in object">
+            {{key}}:{{value}}
+            <!--key值就是一个键名-->
+        </li>
+        <li v-for="(value,key,index) in object">
+            {{index+1}}.{{key}}:{{value}}
+            <!--第三个参数作为索引-->
+        </li>
+        <li v-for="n in 10">
+            {{n}}
+            <!--v-for可以循环整数-->
+        </li>
+        <li>
+            {{message.split('').reverse().join('')}}
+        </li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            message:'helloworld',
+            object:{
+                name:"菜鸟教程",
+                url:'djkhfsj',
+                slogan:'jdhkhfshf'
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+    <style>
+        .class2{
+            background:#444;
+            color:#eee;
+        }
+        .class1{
+            background:red;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <label for="r1">修改颜色</label><input type="checkbox" v-model="class1" id="r1">
+    <br>
+    <div v-bind:class="{'class1':class1}">
+        skjdlsfj
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            class1: true
+        }
+    })
+</script>
+</body>
+</html>

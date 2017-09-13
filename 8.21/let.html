@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let</title>
+</head>
+<body>
+<script>
+//    if(true){
+//        //tmp = 'abc';//ReferenceError
+//        //console.log(tmp);//ReferenceError
+//
+//        let tmp;  //暂时死区(TDZ)结束,在let命令声明变量tmp之前,都属于变量tmp的死区
+//        console.log(tmp);//undefined
+//
+//        tmp = 123;
+//        console.log(tmp);//123
+//    }
+//
+//    //typeof x;  //ReferenceError   "暂时性死区"也意味着typeof不再是一个百分之百安全的操作,
+//               //上面代码中,变量x使用let命令声明,所以在声明之前,都属于x的"死区",只要用到该变量就会报错.因此
+//               //typeof运行时就会抛出一个ReferenceError
+//    //let x;
+//
+//
+//    typeof  undeclared_variable;  //undefined   在上面代码中,undeclared_variable是一个不存在的变量名,结果返回"undefined",
+//                                  //所以,在没有let之前,typeof运算符是百分百安全的,永远不会报错.现在这一点不成立了
+//
+//
+//    //var x = x;  //不报错
+//    let x = x;   //ReferenceError  : x is  not defined
+//                 //使用let变量声明时,只要变量在还没有声明完成前使用,就会报错.在变量x的声明语句还没有执行完成前,就去取x的值,
+//                 //导致报错"x未定义"
+//
+//
+//
+//
+//    //报错
+//    function (){
+//        let a = 10;
+//        var a = 1;
+//    }
+//    //报错
+//    function (){
+//        let a = 10;
+//        let a = 1;
+//    }//let不允许在相同的作用域内,重复声明同一个变量.
+//
+//
+//    function func(arg){
+//        let arg;  //报错
+//    }
+//
+//    function func(arg){
+//        {
+//            let arg;  //不报错,新的作用域
+//        }
+//    }
+    for(let i=0;i<10;i++){
+        console.log(i);
+    }
+    console.log(i);
+</script>
+</body>
+</html>

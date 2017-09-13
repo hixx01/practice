@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getNums(index) {
+
+        if(index == 0) return 0;
+
+        var nums= [1];
+        var target2 = 0,target3 = 0,target5 = 0;
+
+        for(var i = 1;i < index;i++){
+
+            nums[i]=Math.min(nums[target2]*2,nums[target3]*3,nums[target5]*5);
+
+            if(nums[i]==nums[target2]*2) target2++;
+            if(nums[i]==nums[target3]*3) target3++;
+            if(nums[i]==nums[target5]*5) target5++;
+        }
+
+        return nums[index-1];
+
+    }
+
+    var item = parseInt(readline());
+    print(getNums(item));
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+<script type="text/javascript">
+//var fn = null;
+//function foo() {
+//var a = 2;
+//function innnerFoo() {
+//console.log(a);
+//}
+//fn = innnerFoo; // 将 innnerFoo的引用，赋值给全局变量中的fn
+//}
+//
+//function bar() {
+//fn(); // 此处的保留的innerFoo的引用
+//}
+//
+//foo();
+//bar(); // 2
+//function fn() {
+//    console.log('this is test.')
+//}
+//var timer =  setTimeout(fn, 1000);
+//console.log(timer);
+
+(function () {
+    var a = 10;
+    var b = 20;
+
+    function add(num1, num2) {
+        var num1 = !!num1 ? num1 : a;
+        var num2 = !!num2 ? num2 : b;
+
+        return num1 + num2;
+    }
+
+    window.add = add;
+})();
+
+add(10, 20);
+
+
+</script>
+</body>
+</html>

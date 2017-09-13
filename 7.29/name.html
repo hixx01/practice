@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>姓名</title>
+</head>
+<body>
+<script src="jquery-1.12.3.min.js"></script>
+<script>
+    window.onload = function(){
+        var url = "https://www.easy-mock.com/mock";
+        $.ajax({
+            type: "GET",
+            url: url + "/597bec16a1d30433d84129b4/name/list/name/sort",
+            dataType: "json",
+            success: function(res){
+                var data = res.data;
+                var oDate='';
+                if(res.success){
+                    for(var i in data){
+
+                        console.log(data[i]);
+
+                    }
+                }
+            },
+            error: function(){
+                console.log("啦啦啦，服务器开小差啦!");
+            }
+        });
+    };
+</script>
+</body>
+</html>

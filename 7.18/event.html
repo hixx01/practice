@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery事件</title>
+</head>
+<body>
+<script src="jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+    function one(){
+        alert("one");
+    }
+    function two(){
+        alert("two");
+    }
+    //方法1
+    //window.onload = one;
+    //window.onload = two;
+
+
+    //方法2
+    //window.onload = function(){
+        //one();
+        //two();
+    //}
+
+    //方法3
+    $(document).ready(function(){
+        one();
+    })
+    $(document).ready(function(){
+        two();
+    })
+</script>
+</body>
+</html>

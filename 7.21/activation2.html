@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+</head>
+<body>
+<script type="text/javascript">
+    var color = "blue";
+
+    function changeColor(){
+        var anotherColor = "red";
+        function swapColors(){
+           var tempColor = anotherColor;
+            anotherColor = color;
+            color = tempColor;
+            alert(color);  //red
+            alert(anotherColor);  //blue
+        }
+        swapColors();
+    }
+    changeColor();
+
+</script>
+</body>
+</html>

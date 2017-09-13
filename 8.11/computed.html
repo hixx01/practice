@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed计算属性</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>原始字符串:{{message}}</p>
+    <p>计算后反转字符串:{{reversedMessage}}</p>
+</div>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            message:'Runoob!'
+        },
+        computed:{//computed可以写成methods,但是这样的话,{{reversedMessage}}应该写成{{eversedMessage()}}
+            //计算属性的getter
+            reversedMessage:function(){
+                //this指向vm实例
+                return this.message.split('').reverse().join('')
+            }
+        }
+    })
+</script>
+</body>
+</html>

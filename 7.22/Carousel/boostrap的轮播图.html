@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>无标题文档</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .clearfix:before, .clearfix:after {
+            display: table;
+            content: "";
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .wrap {
+            width: 450px;
+            height: 250px;
+            overflow: hidden;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .box {
+            height: 250px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+        }
+
+        .box li {
+            width: 450px;
+            height: 250px;
+            float: left;
+        }
+
+        .left {
+            width: 15%;
+            height: 250px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-align: center;
+            line-height: 250px;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        .right {
+            width: 15%;
+            height: 250px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            text-align: center;
+            line-height: 250px;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        .left:hover {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+        }
+
+        .right:hover {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+        }
+
+        .list {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+        }
+
+        .list li {
+            width: 12px;
+            height: 12px;
+            border: 1px #fff solid;
+            border-radius: 50%;
+            float: left;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .list li.active {
+            background-color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul class="box clearfix">
+        <li><img src="../img/WechatIMG31.jpeg" width="450" height="250"/></li>
+        <li><img src="../img/WechatIMG32.jpeg" width="450" height="250"/></li>
+        <li><img src="../img/WechatIMG33.jpeg" width="450" height="250"/></li>
+    </ul>
+    <div class="left">&lt;</div>
+    <div class="right">&gt;</div>
+    <ul class="list clearfix">
+    </ul>
+</div>
+<script src="jquery-1.10.1.min.js"></script>
+<script src="velocity.min.js"></script>
+<script>
+    var liNum = $(".box li").length;   //li的数量
+    var nowImg = 0;
+    var onOff = true;
+    $(".box").html($(".box").html() + $(".box").html());
+    $(".box").css("width", $(".box li")[0].offsetWidth * liNum * 2 + "px");
+    for (var i = 0; i < liNum; i++) {//点
+        $("<li>").appendTo($(".list"));
+    }
+    $(".list").css({"width": liNum * 20 + "px", "margin-left": -liNum * 20 / 2 + "px"});
+    $(".list li").eq(0).addClass("active");
+    $(".left").on("click", function () {
+        if (onOff) {
+            onOff = false;//通过布尔值开关，本次动画未结束前，下一次动画不能执行。
+            if (nowImg === 0) {
+                nowImg = 3;
+                $(".box").css("left", -$(".box li")[0].offsetWidth * liNum + "px");
+            }
+            nowImg--;
+            $(".box").velocity({"left": -$(".box li")[0].offsetWidth * nowImg + "px"}, {
+                complete: function () {
+                    onOff = true;
+                }
+            });
+            $(".list li").eq(nowImg).addClass("active").siblings().removeClass("active");
+        }
+    });
+    $(".right").on("click", function () {
+        fn();
+    });
+    function fn() {
+        if (onOff) {
+            onOff = false;
+            nowImg++;
+            $(".box").velocity({"left": -$(".box li")[0].offsetWidth * nowImg + "px"}, {
+                complete: function () {
+                    if (nowImg === 3) {
+                        nowImg = 0;
+                        $(".box").css("left", 0 + "px");
+                    }
+                    $(".list li").eq(nowImg).addClass("active").siblings().removeClass("active");
+                    onOff = true;
+                }
+            });
+        }
+    }
+
+    timer = setInterval(fn, 1600);//调用计时器自动轮播。
+    $(".box,.left,.right,.list").on("mouseover", function () {
+        clearInterval(timer);
+    });
+    $(".box,.left,.right,.list").on("mouseout", function () {
+        timer = setInterval(fn, 1600);
+    });
+
+    $(".list li").on("click", function () {
+        if (onOff) {
+            onOff = false;
+            nowImg = $(this).index();//获取Li的序列数
+            $(".box").velocity({"left": -nowImg * $(".box li")[0].offsetWidth + "px"}, {
+                complete: function () {
+                    onOff = true;
+                }
+            });
+            $(this).addClass("active").siblings().removeClass("active");
+        }
+    });
+    //arr.sort()
+</script>
+</body>
+</html>

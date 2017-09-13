@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json解析</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var jsondata = {
+        "staff":[{"name":"洪七","age":70},
+            {"name":"黄蓉","age":40},
+            {"name":"郭靖","age":50}
+        ]
+    };
+    var jsonobj = eval('('+jsondata+')');
+    alert("jsonobj.staff[0].name");
+</script>
+</body>
+</html>xcz

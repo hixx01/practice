@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制圆形</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3">Your browser does not support the canvas element.</canvas>
+<script type="text/javascript">
+    var c = document.getElementById("myCanvas");
+    var cxt = c.getContext("2d");
+    cxt.fillstyle = "#FF0000";
+    cxt.beginPath();  //开始路径
+    cxt.arc(70,18,15,0,Math.PI*2,false);  //绘制圆形   true 表示从逆时针开始计算  false就是从顺时针开始
+    cxt.closePath();   //创建当前点到开始点的位置
+    cxt.fill();   //填充圆
+    //cxt.stroke();//描边路径
+</script>
+</body>
+</html>
