@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            background-color: black;
+            width: 650px;
+            height: 210px;
+            overflow: hidden;
+
+        }
+
+        li{
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            list-style: none;
+            background-color: red;
+        }
+        li:nth-of-type(6n){
+            margin-right:0;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</div>
+<script src="jquery-1.12.3.min.js"></script>
+<script>
+    console.log($('*'));
+</script>
+</body>
+</html>

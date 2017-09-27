@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = ['a', 'b', 'c', 'd', 'e'];
+    function arrSplice(data, start, deleteCount) {
+// 如果start不是数字，或不能转成数字，start默认就为0
+        if (isNaN(start)) {
+            start = 0;
+        }
+        start = Number(start);
+// 如果start是负数
+        if (start < 0) {
+            start = data.length + start;
+        }
+        if (start < 0) {
+            start = 0;
+        }
+
+// 如果deleteCount没传
+        if (deleteCount == undefined) {
+            deleteCount = data.length - start;
+        }
+        var newArr = [];
+//新增数据
+        var newData = [];
+        if (arguments.length > 3) {
+            for (var i=3; i<arguments.length; i++) {
+                newData[newData.length] = arguments[i];
+            }
+        }
+
+        for (var i=0; i<data.length; i++) {
+            if (i < start) {
+                newArr[newArr.length] = data[i];
+            } else {
+                if (newData.length) {
+
+                    for (var j=0; j<newData.length; j++) {
+                        newArr[newArr.length] = newData[j];
+                    }
+                    newData.length = 0;
+                }
+                if (deleteCount > 0) {
+                    deleteCount--;
+                } else {
+                    newArr[newArr.length] = data[i];
+                }
+            }
+        }
+
+        data = newArr;
+
+        console.log(data);
+    }
+
+    arrSplice(arr,1,1);
+</script>
+</body>
+</html>

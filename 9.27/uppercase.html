@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = 'a_c_v';
+    var str2=str.split('_');
+    var arr = [];
+    for(var i = 0;i<str2.length;i++){
+
+        if(i==0){arr.push(str2[0])}
+        else{
+            arr.push(str2[i].toUpperCase())
+        }
+    }
+    console.log(arr);
+    var str3=arr.join('');
+    console.log(str3);
+    console.log(typeof(str3));
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var url = 'http://localhost:8080/testdemo/hello.jsp?name=ming';
+    var str = url.split("?");
+    console.log(str);
+    var key = str[1];
+    var obj={};
+    var key1 = key.split("=");
+    console.log(key1);
+    if(!obj[key1[0]]){
+        obj[key1[0]]=true;
+
+    }
+    console.log(obj);
+</script>
+</body>
+</html>
