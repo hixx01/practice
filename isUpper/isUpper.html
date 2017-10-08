@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isUpper(str){
+        var str1 = str.split('');
+        var arr = [];
+        for(var i = 0;i<str1.length;i++){
+            if(str1[i]!=str1[i].toUpperCase()){
+                 arr.push(str1[i]);
+            };
+        }
+        return arr;
+    }
+    console.log(isUpper('ABCdtttE'));
+</script>
+</body>
+</html>

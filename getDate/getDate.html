@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dates</title>
+</head>
+<body>
+
+<script>
+    function getCountDays() {
+                var curDate = new Date();
+                 /* 获取当前月份 */
+                 var curMonth = curDate.getMonth();
+                /*  生成实际的月份: 由于curMonth会比实际月份小1, 故需加1 */
+                curDate.setMonth(curMonth+1);
+                /* 将日期设置为0, 设置为11月的第0天,也就是10月的最后一天*/
+                curDate.setDate(0);
+                /* 返回当月的天数 */
+                return curDate.getDate();
+        }
+    // 例如,  获取当前月份(现在是3月)的总天数:
+            console.log(getCountDays());
+</script>
+</body>
+</html>

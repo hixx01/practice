@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function mGetDate(year, month){
+        var d = new Date(year, month, 0);//由于JavaScript中day的范围为1~31中的值，
+                 // 所以当设为0时，会向前 一天，也即表示上个月的最后一天。
+        return d.getDate();
+    }
+    var date = mGetDate(2017,10);
+    console.log(date);
+</script>
+</body>
+</html>
